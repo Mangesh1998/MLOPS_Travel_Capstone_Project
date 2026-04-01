@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/app/models
+    depends_on:
+      - mlflow
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+
+  mlflow:
+    image: python:3.9-slim
+    command: mlflow ui --host 0.0.0.0 --port 5001
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./mlruns:/app/mlruns
