@@ -20,9 +20,10 @@ This project implements MLOps for travel data prediction and recommendation.
    - Features: Date, location, flight type, distance, time
 
 2. **Gender Classification Model**
-   - Algorithm: RandomForestClassifier  
-   - Accuracy: 29.5%
-   - Features: Company, age
+   - Algorithm: RandomForestClassifier (enhanced)
+   - Accuracy: 37.7% (improved from 29.5%)
+   - Features: Demographics + travel behavior (31 features)
+   - CV Accuracy: 0.3433 ± 0.0734
 
 3. **Hotel Recommendation System**
    - Algorithm: Content-based similarity
