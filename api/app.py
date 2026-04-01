@@ -6,12 +6,12 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the model and preprocessors
-model = joblib.load('../models/flight_price_model.pkl')
-scaler = joblib.load('../models/scaler.pkl')
-le_from = joblib.load('../models/le_from.pkl')
-le_to = joblib.load('../models/le_to.pkl')
-le_agency = joblib.load('../models/le_agency.pkl')
-features = joblib.load('../models/features.pkl')
+model = joblib.load('../models/trained_models/flight_price_model.pkl')
+scaler = joblib.load('../models/preprocessing/scaler.pkl')
+le_from = joblib.load('../models/preprocessing/le_from.pkl')
+le_to = joblib.load('../models/preprocessing/le_to.pkl')
+le_agency = joblib.load('../models/preprocessing/le_agency.pkl')
+features = joblib.load('../models/preprocessing/features.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():

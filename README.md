@@ -3,14 +3,17 @@
 This project implements MLOps for travel data prediction and recommendation.
 
 ## Project Structure
-- `data/`: Datasets (users.csv, flights.csv, hotels.csv)
-- `models/`: Model training scripts and saved models
-- `api/`: Flask API for flight price prediction
-- `recommendation/`: Streamlit app for hotel recommendations
-- `airflow/`: Airflow DAGs for workflow orchestration
-- `k8s/`: Kubernetes deployment files
-- `docker/`: Dockerfiles and docker-compose
-- `jenkins/`: CI/CD pipeline
+- `data/`: Raw datasets (users.csv, flights.csv, hotels.csv)
+- `models/`: ML models and artifacts
+  - `trained_models/`: Saved model files (.pkl)
+  - `preprocessing/`: Scalers, encoders, feature lists
+  - `training_scripts/`: Model training code
+- `api/`: Flask REST API for flight price prediction
+- `recommendation/`: Streamlit web app for hotel recommendations
+- `airflow/`: Workflow orchestration DAGs
+- `k8s/`: Kubernetes deployment manifests
+- `docker/`: Containerization files and docker-compose
+- `jenkins/`: CI/CD pipeline configuration
 
 ## Models
 1. **Flight Price Regression Model**
